@@ -1,6 +1,6 @@
 {
   "name": "fannypack-riot-tags",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -17,7 +17,6 @@
   },
   "tags": ["gulp", "riot tags compiler", "gulp-riot", "fannypack"],
   "devDependencies": {
-    "browser-sync": "^2.8.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-insert": "^0.5.0",

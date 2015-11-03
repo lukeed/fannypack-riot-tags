@@ -1,7 +1,6 @@
-var gulp        = require('gulp')
-var Fannypack   = require('fannypack')
-var Pather      = Fannypack.$.Pather
-var BrowserSync = Fannypack.$.BrowserSync
+var Fannypack = require('fannypack')
+var gulp      = require('gulp')
+var $         = Fannypack.$
 
 // Additional Packages
 var riot        = require('gulp-riot')
@@ -12,8 +11,8 @@ Fannypack.Tasks['tags'] = function(config){
   if(!config.tags) return
 
   var paths = {
-    src: Pather.join(config.root.src, config.tags.src, '/**/*'),
-    dest: Pather.join(config.root.src, config.tags.dest) // dump into src/javascripts
+    src: $.Pather.join(config.root.src, config.tags.src, '/**/*'),
+    dest: $.Pather.join(config.root.src, config.tags.dest) // dump into src/javascripts
   }
 
   gulp.task('tags', function() {
@@ -23,6 +22,6 @@ Fannypack.Tasks['tags'] = function(config){
       // insert riot dependency declaration
       .pipe( insert.prepend("import riot from 'riot';\n\n") )
       .pipe( gulp.dest(paths.dest) )
-      .pipe( BrowserSync.reload({stream:true}) )
+      .pipe( $.BrowserSync.reload({stream:true}) )
   })
 }
