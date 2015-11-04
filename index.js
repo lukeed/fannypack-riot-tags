@@ -4,7 +4,6 @@ var $         = Fannypack.$
 
 // Additional Packages
 var riot        = require('gulp-riot')
-var concat      = require('gulp-concat')
 var insert      = require('gulp-insert')
 
 Fannypack.Tasks['tags'] = function(config){
@@ -17,7 +16,7 @@ Fannypack.Tasks['tags'] = function(config){
 
   gulp.task('tags', function() {
     return gulp.src(paths.src)
-      .pipe( concat(config.tags.output) )
+      .pipe( $.Concat(config.tags.output) )
       .pipe( riot({compact: true}) )
       // insert riot dependency declaration
       .pipe( insert.prepend("import riot from 'riot';\n\n") )
